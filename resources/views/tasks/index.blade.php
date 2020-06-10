@@ -4,13 +4,13 @@
 <?php $i=1; ?>
 
 @if (Auth::check())
-    <div class="tasklist-index pt-3 pb-3">
+    <div class="tasklist-index pt-4 pb-4">
         <h1>タスク一覧</h1>
         @if (count($tasks) > 0)
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>id</th>
+                        <th class="d-none d-sm-table-cell">URL</th>
                         <th>No</th>
                         <th>タスク</th>
                         <th>進捗状況</th>
@@ -22,10 +22,10 @@
                     @foreach ($tasks as $task)
                     <tr>
                         {{-- タスク詳細ページへのリンク --}}
-                        <td>{!! link_to_route('tasks.show', $task->id, ['task' => $task->id]) !!}</td>
+                        <td class="d-none d-sm-table-cell">{{ $task->id }}</td>
                         <td><?php echo $i;?></td>
-                        <td>{{ $task->content }}</td>
-                        <td>{{ $task->status }}</td>
+                        <td>{!! link_to_route('tasks.show', $task->content, ['task' => $task->id],['class' => 'text-dark'])!!}</td>
+                        <td><span class={{ "$task->status_class" }}>{{ $task->status }}</span></td>
                         <td class="d-none d-sm-table-cell">{{ $task->created_at }}</td>
                         <td class="d-none d-sm-table-cell">{{ $task->updated_at }}</td>
                     </tr>

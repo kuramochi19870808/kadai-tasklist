@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="mt-5">
-                    {!! Form::submit('投稿', ['class' => 'btn btn-primary w-150px']) !!}
+                    {!! Form::submit('投稿', ['class' => 'btn btn-primary w-200px']) !!}
                 </div>
             {!! Form::close() !!}
         </div>

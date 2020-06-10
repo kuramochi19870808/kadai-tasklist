@@ -2,19 +2,17 @@
 
 @section('content')
 @if (Auth::id() == $task->user_id)
-<div class="pt-3 pb-3 tasklist-show">
+<div class="pt-4 pb-4 tasklist-show">
     <h1 class="pc">
-        id = {{ $task->id }} の
         タスク詳細ページ
     </h1>
     <h1 class="sp">
-        id = {{ $task->id }} </br>
         タスク詳細ページ
     </h1>
 
     <table class="table table-bordered mt-3">
         <tr>
-            <th>id</th>
+            <th>URL</th>
             <td>{{ $task->id }}</td>
         </tr>
         <tr>

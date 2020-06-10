@@ -2,11 +2,11 @@
 
 @section('content')
 @if (Auth::id() == $task->user_id)
-<div class="pt-3 pb-3">
-    <h1>id: {{ $task->id }} のタスク編集ページ</h1>
+<div class="pt-4 pb-4">
+    <h1>タスク編集ページ</h1>
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-10 col-sm-6">
             {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
 
                 <div class="form-group mt-4">
@@ -29,7 +29,7 @@
                 </div>
                 
                 <div class="mt-5">
-                    {!! Form::submit('更新', ['class' => 'btn btn-primary w-150px']) !!}
+                    {!! Form::submit('更新', ['class' => 'btn btn-primary w-200px']) !!}
                 </div>
             {!! Form::close() !!}
         </div>
