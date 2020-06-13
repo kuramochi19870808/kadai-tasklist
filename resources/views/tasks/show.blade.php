@@ -21,7 +21,7 @@
         </tr>
         <tr>
             <th>進捗状況</th>
-            <td>{{ $task->status }}</td>
+            <td><span class={{ "$task->status_class" }}>{{ $task->status }}</span></td>
         </tr>
         <tr>
             <th>登録日</th>
